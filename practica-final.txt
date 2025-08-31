@@ -1,0 +1,61 @@
+---------------------------
+Problematica:
+La empresa Super Tech está perdiendo dinero debido a errores en los cálculos Días, tradiciones de moneda internacional. Específicamente 
+al convertir euros y dólares a pesos mexicanos
+---------------------------
+
+---------------------------
+Algoritmo:
+1. Definir el valor actual de los pesos a convertir (USD,EURO, MXN)
+2. Solicitar al usuario el tipo de conversion (Euro a Mex o Dolar Mex)
+3. Solicitar al usuario el monto a convertir
+4. Realizar la conversion utilizando el tipo de cambio correspondiente
+5. Mostrar el resultado de la conversion al usuario 
+---------------------------
+
+---------------------------
+Suedocodigo:
+Inicio
+# Paso 1 : Definir el valor actual de los pesos a convertir (USD,EURO, MXN)
+     Definir tipo_cambio_eur_a_mxn = 21,77
+     Definir tipo_cambio_usd_a_mxn = 18,66
+
+# Paso 2 : Solicitar al usuario el tipo de conversion (Euro a Mex o Dolar Mex)
+Mostrar mensaje:"Por favor ingrese el tipo de moneda para conversion (EUR/USD): "
+
+# Paso 3 : Solicitar al usuario el monto a convertir
+Mostrar mensaje: "Ingrese el monto a conversion: "
+
+# Paso 4 : Realizar la conversion utilizando el tipo de cambio correspondiente
+
+Si tipo_conversion == "EUR"
+    Calcular resultado = monto_a_convertir * Definir tipo_cambio_eur_a_mxn
+    Mostrar mensaje: "El resultado de la conversion de EUR a MXN es:", resultado
+sino si tipo_conversion == "USD"
+    Calcular resultado = monto_a_convertir * Definir tipo_cambio_usd_a_mxn
+    Mostrar mensaje: "El resultado de la conversion de USD a MXN es:", resultado
+sino 
+    Mostrar: "Tipo de conversion no valido"
+
+Fin
+
+
+
+
+VERSION MEJORADA
+INICIO
+# Paso 1 : Definir tipo_cambio = {"EUR": 21.77, "USD": 18.66}
+
+# Paso 2 : Mostrar mensaje: "Ingrese el tipo de moneda (EUR/USD): "
+    Leer tipo_conversion
+
+# Paso 3 : Mostrar mensaje: "Ingrese el monto a convertir: "
+    Leer monto
+
+# Paso 4 :
+    Si tipo_conversion está en tipo_cambio
+        resultado = monto * tipo_cambio[tipo_conversion]
+        Mostrar: "El resultado es:", resultado
+    Si no
+        Mostrar: "Tipo de conversión no válido"
+FIN
